@@ -1,0 +1,116 @@
+﻿<Window x:Class="Factorio_Blueprint_Tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Factorio_Blueprint_Tool"
+        mc:Ignorable="d"
+        Title="Factorio Blueprint Thingy" Height="600" Width="1000" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ToolBar Grid.Row="0" Grid.ColumnSpan="3" ToolBarTray.IsLocked="True">
+                <Button x:Name="PasteButton" Content="Paste" Click="PasteButton_Click"/>
+                <Separator/>
+                <Button x:Name="CopyButton" Content="Copy" Click="CopyButton_Click"/>
+                <Separator/>
+                <Button x:Name="VMirrorButton" Click="VMirrorButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/reflect-vertical.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button x:Name="HMirrorButton" Click="HMirrorButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/reflect-horizontal.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Separator/>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/transport-belt.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/fast-transport-belt.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/express-transport-belt.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Separator/>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/assembling-machine-1.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/assembling-machine-2.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/assembling-machine-3.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Separator/>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/stone-furnace.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/steel-furnace.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Separator/>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/inserter.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/fast-inserter.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/stack-inserter.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Separator/>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/filter-inserter.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+                <Button Width="30" Height="30" Click="ItemButton_Click">
+                    <Button.Content>
+                        <Image Source="Icons/stack-filter-inserter.png" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+            </ToolBar>
+            <ToolBar Grid.Row="0" Grid.ColumnSpan="3" ToolBarTray.IsLocked="True" HorizontalAlignment="Right">
+                <Button x:Name="EncodeButton" Content="&lt;- Encode" Click="EncodeButton_Click"/>
+                <Separator/>
+                <Button x:Name="DecodeButton" Content="Decode -&gt;" Click="DecodeButton_Click"/>
+            </ToolBar>
+            <TextBox x:Name="InputBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" />
+            <GridSplitter HorizontalAlignment="Stretch" Width="5" Grid.Column="1" Grid.Row="1" />
+            <TextBox x:Name="OutputBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" />
+        </Grid>
+    </Grid>
+</Window>
