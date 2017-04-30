@@ -110,45 +110,6 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\transport-belt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\express-transport-belt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fast-transport-belt.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\assembling-machine-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\assembling-machine-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\assembling-machine-3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\steel-furnace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fast-inserter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stack-filter-inserter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stack-inserter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stone-furnace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inserter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\filter-inserter.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\assembling-machine-1.png" />
     <Resource Include="Icons\assembling-machine-2.png" />
     <Resource Include="Icons\assembling-machine-3.png" />
