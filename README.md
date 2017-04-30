@@ -4,7 +4,7 @@ A tool to import a blueprint string from the clipboard, reflect it vertically or
 
 ## Download
 
-[Version 0.1](https://github.com/Jason-Clement/Factorio-Blueprint-Tool/releases/download/v0.1/Factorio-Blueprint-Tool.zip)
+[Version 0.2](https://github.com/Jason-Clement/Factorio-Blueprint-Tool/releases/download/v0.2/Factorio-Blueprint-Tool.zip)
 
 ## Instructions
 
@@ -13,3 +13,7 @@ Paste the blueprint string into the left box (or just click the Paste button whe
 Transport belt replacements also replace underground belts and splitters.
 
 The encode and decode buttons will take the blueprint string on the left and convert it to its raw json on the right, and vice versa.
+
+## Issues
+
+Downgrading assembly machines does not take into account whether the recipe can be crafted in a lower-tier assembly machine. Factorio complains when a blueprint is imported where this happened.
