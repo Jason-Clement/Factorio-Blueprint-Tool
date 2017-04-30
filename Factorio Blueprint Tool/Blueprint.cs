@@ -94,25 +94,37 @@ namespace Factorio_Blueprint_Tool
         {
             var o = JObject.Parse(json);
             var entities = o["blueprint"]["entities"];
-            var resultsD = new Dictionary<string, int>();
+            var nReplaced = new Dictionary<string, int>();
+            var nNotReplaced = new Dictionary<string, int>();
             foreach (var entity in entities)
             {
                 foreach (var key in itemsToReplace.Keys)
                 {
                     if (entity["name"].Value<string>() == key)
                     {
+                        if (itemsToReplace[key] == "stack-filter-inserter" && entity["filters"] != null && (entity["filters"] as JArray).Count > 1)
+                        {
+                            if (!nNotReplaced.ContainsKey(key)) nNotReplaced.Add(key, 0);
+                            nNotReplaced[key]++;
+                            continue;
+                        }
                         entity["name"] = itemsToReplace[key];
-                        if (!resultsD.ContainsKey(key)) resultsD.Add(key, 0);
-                        resultsD[key]++;
+                        if (!nReplaced.ContainsKey(key)) nReplaced.Add(key, 0);
+                        nReplaced[key]++;
                     }
                 }
             }
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("The following items were replaced:");
-            sb.AppendLine();
-            foreach (var key in resultsD.Keys)
+            foreach (var key in nReplaced.Keys)
             {
-                sb.AppendLine(key + ": " + resultsD[key].ToString());
+                sb.AppendLine(key + ": " + nReplaced[key].ToString());
+            }
+            sb.AppendLine();
+            sb.AppendLine("The following items could not be replaced:");
+            foreach (var key in nNotReplaced.Keys)
+            {
+                sb.AppendLine(key + ": " + nNotReplaced[key].ToString());
             }
             results = sb.ToString();
 
