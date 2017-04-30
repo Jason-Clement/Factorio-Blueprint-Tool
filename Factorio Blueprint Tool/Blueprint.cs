@@ -80,11 +80,11 @@ namespace Factorio_Blueprint_Tool
 
                 if (vertical)
                 {
-                    entity["position"]["y"] = entity["position"]["y"].Value<int>() * -1;
+                    entity["position"]["y"] = entity["position"]["y"].Value<double>() * -1;
                 }
                 else
                 {
-                    entity["position"]["x"] = entity["position"]["x"].Value<int>() * -1;
+                    entity["position"]["x"] = entity["position"]["x"].Value<double>() * -1;
                 }
             }
             return o.ToString(Formatting.None);
